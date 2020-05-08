@@ -67,7 +67,8 @@
     ORDER BY a.board_name
   </select>
 
-  <insert id="save" keyColumn="board_id" keyProperty="id" parameterType="org.cboard.pojo.DashboardBoard"
+  <insert id="save" keyColumn="board_id" keyProperty="id"
+    parameterType="org.cboard.pojo.DashboardBoard"
     useGeneratedKeys="true">
     INSERT INTO dashboard_board(user_id,board_name,layout_json,category_id)
     VALUES (#{userId},#{name},#{layout},

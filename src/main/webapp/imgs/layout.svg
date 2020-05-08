@@ -3,52 +3,62 @@
   width="200px" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <rect height="18" id="path-1" width="60" x="0" y="24"></rect>
-    <mask fill="white" height="18" id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox"
+    <mask fill="white" height="18" id="mask-2" maskContentUnits="userSpaceOnUse"
+      maskUnits="objectBoundingBox"
       width="60" x="0" y="0">
       <use xlink:href="#path-1"></use>
     </mask>
     <rect height="18" id="path-3" width="60" x="0" y="76"></rect>
-    <mask fill="white" height="18" id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox"
+    <mask fill="white" height="18" id="mask-4" maskContentUnits="userSpaceOnUse"
+      maskUnits="objectBoundingBox"
       width="60" x="0" y="0">
       <use xlink:href="#path-3"></use>
     </mask>
     <rect height="18" id="path-5" width="60" x="0" y="100"></rect>
-    <mask fill="white" height="18" id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox"
+    <mask fill="white" height="18" id="mask-6" maskContentUnits="userSpaceOnUse"
+      maskUnits="objectBoundingBox"
       width="60" x="0" y="0">
       <use xlink:href="#path-5"></use>
     </mask>
     <rect height="18" id="path-7" width="60" x="0" y="0"></rect>
-    <mask fill="white" height="18" id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox"
+    <mask fill="white" height="18" id="mask-8" maskContentUnits="userSpaceOnUse"
+      maskUnits="objectBoundingBox"
       width="60" x="0" y="0">
       <use xlink:href="#path-7"></use>
     </mask>
     <rect height="102" id="path-9" width="88" x="112" y="10"></rect>
-    <mask fill="white" height="102" id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox"
+    <mask fill="white" height="102" id="mask-10" maskContentUnits="userSpaceOnUse"
+      maskUnits="objectBoundingBox"
       width="88" x="0" y="0">
       <use xlink:href="#path-9"></use>
     </mask>
     <rect height="22" id="path-11" width="60" x="0" y="48"></rect>
-    <mask fill="white" height="22" id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox"
+    <mask fill="white" height="22" id="mask-12" maskContentUnits="userSpaceOnUse"
+      maskUnits="objectBoundingBox"
       width="60" x="0" y="0">
       <use xlink:href="#path-11"></use>
     </mask>
     <rect height="44" id="path-13" width="64" x="124" y="42"></rect>
-    <mask fill="white" height="44" id="mask-14" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox"
+    <mask fill="white" height="44" id="mask-14" maskContentUnits="userSpaceOnUse"
+      maskUnits="objectBoundingBox"
       width="64" x="0" y="0">
       <use xlink:href="#path-13"></use>
     </mask>
     <rect height="26" id="path-15" width="64" x="38" y="53"></rect>
-    <mask fill="white" height="26" id="mask-16" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox"
+    <mask fill="white" height="26" id="mask-16" maskContentUnits="userSpaceOnUse"
+      maskUnits="objectBoundingBox"
       width="64" x="0" y="0">
       <use xlink:href="#path-15"></use>
     </mask>
     <polygon id="path-17" points="76 61 84 66 76 71"></polygon>
-    <mask fill="white" height="10" id="mask-18" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox"
+    <mask fill="white" height="10" id="mask-18" maskContentUnits="userSpaceOnUse"
+      maskUnits="objectBoundingBox"
       width="8" x="0" y="0">
       <use xlink:href="#path-17"></use>
     </mask>
     <rect height="2" id="path-19" width="26" x="54" y="65"></rect>
-    <mask fill="white" height="2" id="mask-20" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox"
+    <mask fill="white" height="2" id="mask-20" maskContentUnits="userSpaceOnUse"
+      maskUnits="objectBoundingBox"
       width="26" x="0" y="0">
       <use xlink:href="#path-19"></use>
     </mask>
