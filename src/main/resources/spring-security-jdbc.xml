@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:security="http://www.springframework.org/schema/security"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-4.1.xsd">
+
+  <security:http auto-config="true">
+    <security:intercept-url access="permitAll" pattern="/lib/**"/>
+    <security:intercept-url access="permitAll" pattern="/dist/**"/>
+    <security:intercept-url access="permitAll" pattern="/bootstrap/**"/>
+    <security:intercept-url access="permitAll" pattern="/plugins/**"/>
+    <security:intercept-url access="permitAll" pattern="/js/**"/>
+    <security:intercept-url access="permitAll" pattern="/login**"/>
+    <security:intercept-url access="permitAll" pattern="/css/**"/>
+    <security:intercept-url access="permitAll" pattern="/fonts/**"/>
+    <security:intercept-url access="permitAll" pattern="/imgs/**"/>
+    <security:intercept-url access="!anonymous" pattern="/**"/>
+    <security:form-login always-use-default-target="true" default-target-url="/starter.html"
+      login-page="/login.do"
+      password-parameter="password" username-parameter="username"/>
+    <security:logout logout-url="/j_spring_cas_security_logout"/>
+    <security:remember-me remember-me-parameter="remember_me"/>
+    <security:csrf disabled="true"/>
+  </security:http>
+
+  <security:authentication-manager alias="authenticationManager">
+    <security:authentication-provider ref="shareAuthenticationProviderDecorator"/>
+  </security:authentication-manager>
+
+  <bean class="org.cboard.security.service.ShareAuthenticationProviderDecorator"
+    id="shareAuthenticationProviderDecorator">
+    <property name="authenticationProvider" ref="daoAuthenticationProvider"/>
+  </bean>
+
+  <bean class="org.springframework.security.authentication.dao.DaoAuthenticationProvider"
+    id="daoAuthenticationProvider">
+    <property name="userDetailsService">
+      <ref bean="userDetailsService"/>
+    </property>
+    <property name="passwordEncoder">
+      <ref bean="passwordEncoder"/>
+    </property>
+  </bean>
+
+  <bean class="org.cboard.security.service.DbUserDetailService"
+    id="userDetailsService">
+    <property name="dataSource" ref="dataSource">
+    </property>
+    <property name="authoritiesByUsernameQuery">
+      <value>
+        <![CDATA[SELECT login_name username, 'admin' AS authority
+                           FROM dashboard_user
+                          WHERE login_name = ?
+                         ]]>
+      </value>
+    </property>
+    <property name="usersByUsernameQuery">
+      <value>
+        <![CDATA[SELECT user_id,user_name,login_name, user_password, 1 AS enabled
+                           FROM dashboard_user
+                          WHERE login_name = ? ]]>
+      </value>
+    </property>
+  </bean>
+
+  <bean class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"
+    id="passwordEncoder"/>
+
+  <bean class="org.cboard.security.service.DefaultAuthenticationService"
+    id="dbAuthenticationService"/>
+
+</beans>
