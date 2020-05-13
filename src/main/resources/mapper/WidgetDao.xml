@@ -16,8 +16,8 @@
     category_name AS categoryName,
     u.user_name AS userName,
     u.login_name AS loginName,
-    create_time AS createTime,
-    update_time AS updateTime
+    w.create_time AS createTime,
+    w.update_time AS updateTime
     FROM dashboard_widget w
     LEFT JOIN dashboard_user u ON u.user_id = w.user_id
   </select>
@@ -31,8 +31,8 @@
     category_name AS categoryName,
     u.user_name AS userName,
     u.login_name AS loginName,
-    create_time AS createTime,
-    update_time AS updateTime
+    w.create_time AS createTime,
+    w.update_time AS updateTime
     FROM dashboard_widget w
     LEFT JOIN dashboard_user u ON u.user_id = w.user_id
     WHERE (#{0} = '${admin_user_id}' OR w.user_id = #{0} OR widget_id IN (SELECT res_id FROM
@@ -50,8 +50,8 @@
     category_name AS categoryName,
     u.user_name AS userName,
     u.login_name AS loginName,
-    create_time AS createTime,
-    update_time AS updateTime
+    w.create_time AS createTime,
+    w.update_time AS updateTime
     FROM dashboard_widget w
     LEFT JOIN dashboard_user u ON u.user_id = w.user_id
     WHERE (
@@ -67,8 +67,8 @@
   </select>
 
   <select id="getWidget" resultType="org.cboard.pojo.DashboardWidget">
-    SELECT widget_id id,user_id userId,widget_name name,data_json data,category_name
-    categoryName,create_time createTime,update_time updateTime
+    SELECT widget_id AS id,user_id AS userId,widget_name AS name,data_json AS data,
+    category_name AS categoryName,create_time AS createTime,update_time AS updateTime
     FROM dashboard_widget
     WHERE widget_id = #{0}
   </select>

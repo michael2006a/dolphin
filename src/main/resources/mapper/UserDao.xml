@@ -18,9 +18,9 @@
   </update>
 
   <select id="getUserList" resultType="org.cboard.pojo.DashboardUser">
-    SELECT user_id userId,login_name loginName,user_name userName,user_status userStatus FROM
-    dashboard_user
-    order by login_name
+    SELECT user_id AS userId,login_name AS loginName,user_name AS userName,user_status AS userStatus
+    FROM
+    dashboard_user order by login_name
   </select>
 
   <update id="update" parameterType="org.cboard.pojo.DashboardUser">
@@ -74,11 +74,12 @@
   </insert>
 
   <select id="getUserRoleList" resultType="org.cboard.pojo.DashboardUserRole">
-    SELECT user_id userId,role_id roleId FROM dashboard_user_role
+    SELECT user_id AS userId,role_id AS roleId FROM dashboard_user_role
   </select>
 
   <select id="getUserByLoginName" resultType="org.cboard.pojo.DashboardUser">
-    SELECT user_id userId,login_name loginName,user_name userName,user_status userStatus FROM
+    SELECT user_id AS userId,login_name AS loginName,user_name AS userName,user_status AS userStatus
+    FROM
     dashboard_user where login_name = #{0}
   </select>
 

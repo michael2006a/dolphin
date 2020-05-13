@@ -18,8 +18,8 @@
     config AS config,
     u.user_name AS userName,
     u.login_name AS loginName,
-    create_time AS createTime,
-    update_time AS updateTime
+    s.create_time AS createTime,
+    s.update_time AS updateTime
     FROM dashboard_datasource s
     LEFT JOIN dashboard_user u ON u.user_id = s.user_id
     WHERE #{0} = '${admin_user_id}' OR s.user_id = #{0} OR datasource_id IN (
@@ -40,8 +40,8 @@
     config AS config,
     u.user_name AS userName,
     u.login_name AS loginName,
-    create_time AS createTime,
-    update_time AS updateTime
+    s.create_time AS createTime,
+    s.update_time AS updateTime
     FROM dashboard_datasource s
     LEFT JOIN dashboard_user u ON u.user_id = s.user_id
     WHERE #{0} = '${admin_user_id}'
@@ -56,8 +56,9 @@
   </select>
 
   <select id="getDatasource" resultType="org.cboard.pojo.DashboardDatasource">
-    SELECT datasource_id id,user_id userId,source_name name,source_type type ,config,create_time
-    createTime,update_time updateTime FROM dashboard_datasource WHERE datasource_id = #{0}
+    SELECT datasource_id as id,user_id as userId,source_name as name,source_type as type ,config,
+    create_time as createTime,update_time as updateTime FROM dashboard_datasource WHERE
+    datasource_id = #{0}
   </select>
 
   <insert id="save" parameterType="org.cboard.pojo.DashboardDatasource">
